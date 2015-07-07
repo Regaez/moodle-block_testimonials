@@ -19,11 +19,10 @@ class block_testimonials_renderer extends plugin_renderer_base {
     public function output_testimonials($config, $context) {
         $html = '';
 
-        $html = '<div class="testimonial__list">';
-
-        echo '<pre>';
-        var_dump($config);
-        echo '</pre>';
+        $html = sprintf(
+            '<div class="testimonial__list %s">',
+            (int) $config->enable_rotation === 1 ? 'autoplay' : ''
+        );
 
         for($i = 1; $i <= (int)$config->testimonials_shown; $i++) {
 
@@ -33,7 +32,8 @@ class block_testimonials_renderer extends plugin_renderer_base {
             $position   = 'testimonial_position_'.$i;
 
             $html .= sprintf(
-                '<li class="testimonial__item" data-id="%d">',
+                '<li class="testimonial__item %s" data-id="%d">',
+                $i === 1 ? 'active' : '',
                 $i
             );
 
@@ -100,7 +100,8 @@ class block_testimonials_renderer extends plugin_renderer_base {
 
             for($i = 1; $i <= (int)$config->testimonials_shown; $i++) {
                 $html .= sprintf(
-                    '<li class="pagination__item"><a class="pagination__link" data-id="%1$d">%1$d</a></li>',
+                    '<li class="pagination__item %1$s"><a class="pagination__link" data-id="%2$d">%2$d</a></li>',
+                    $i === 1 ? 'active' : '',
                     $i
                 );
             }
