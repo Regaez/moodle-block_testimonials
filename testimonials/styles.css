@@ -1,0 +1,71 @@
+.block_testimonials .testimonial__item {
+	list-style: none;
+	padding: 1em 0;
+	overflow: hidden;
+}
+
+.block_testimonials .testimonial__quote {
+	font-style: italic;
+	margin: 0 0 0.5em 0;
+}
+
+.block_testimonials .testimonial__photo {
+	width: 50px;
+	height: 50px;
+	float: right;
+}
+
+.block_testimonials .testimonial__info {
+	float: right;
+	margin: 4px 0 0 0;
+	padding: 0 16px;
+}
+
+.block.block_testimonials .testimonial__info .testimonial__name {
+	display: block;
+	text-align: right;
+	color: #333;
+	text-transform: none;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+
+}
+
+.block_testimonials .testimonial__position {
+	display: block;
+	text-align: right;
+	font-size: 1em;
+	font-style: italic;
+	margin: 0;
+	padding: 0;
+}
+
+.block_testimonials .pagination {
+	margin: 20px 0;
+	text-align: center;
+}
+
+.block_testimonials .pagination__item {
+	list-style: none;
+	display: inline-block;
+	margin: 0 3px;
+}
+
+.block_testimonials .pagination__item.active .pagination__link {
+	background-color: #fff;
+}
+
+.block_testimonials .pagination__link {
+	display: block;
+	padding: 0;
+	width: 16px;
+	height: 16px;
+	border: 2px solid #aaa;
+	background-color: #aaa;
+	border-radius: 50%;
+	box-sizing: border-box;
+	text-indent: -9600em;
+	overflow: hidden;
+	cursor: pointer;
+}
