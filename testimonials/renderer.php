@@ -45,45 +45,49 @@ class block_testimonials_renderer extends plugin_renderer_base {
                     );
                 }
 
-                // Output image
-                if((bool)$config->show_image) {
+                $html .= '<div class="testimonial__person">';
 
-                    $fs = get_file_storage();
-                    $files = $fs->get_area_files($context->id, 'block_testimonials', 'photo', $config->$image);
+                    // Output image
+                    if((bool)$config->show_image) {
 
-                    foreach ($files as $file) {
-                        $filename = $file->get_filename();
-                        if($filename !== '.') {
-                            $url = moodle_url::make_pluginfile_url($file->get_contextid(), $file->get_component(), $file->get_filearea(), $file->get_itemid(), $file->get_filepath(), $filename);
+                        $fs = get_file_storage();
+                        $files = $fs->get_area_files($context->id, 'block_testimonials', 'photo', $config->$image);
 
-                            if(!!$url) {
-                                $html .= sprintf(
-                                    '<img class="testimonial__photo" src="%s" alt="%s">',
-                                    $url,
-                                    $config->$name
-                                );
+                        foreach ($files as $file) {
+                            $filename = $file->get_filename();
+                            if($filename !== '.') {
+                                $url = moodle_url::make_pluginfile_url($file->get_contextid(), $file->get_component(), $file->get_filearea(), $file->get_itemid(), $file->get_filepath(), $filename);
+
+                                if(!!$url) {
+                                    $html .= sprintf(
+                                        '<img class="testimonial__photo" src="%s" alt="%s">',
+                                        $url,
+                                        $config->$name
+                                    );
+                                }
                             }
                         }
                     }
-                }
 
-                $html .= '<div class="testimonial__info">';
+                    $html .= '<div class="testimonial__info">';
 
-                    // Output title
-                    if((bool)$config->show_name) {
-                        $html .= sprintf(
-                            '<h3 class="testimonial__name">%s</h3>',
-                            $config->$name
-                        );
-                    }
+                        // Output title
+                        if((bool)$config->show_name) {
+                            $html .= sprintf(
+                                '<h3 class="testimonial__name">%s</h3>',
+                                $config->$name
+                            );
+                        }
 
-                    // Output description
-                    if((bool)$config->show_position) {
-                        $html .= sprintf(
-                            '<h4 class="testimonial__position">%s</h4>',
-                            $config->$position
-                        );
-                    }
+                        // Output description
+                        if((bool)$config->show_position) {
+                            $html .= sprintf(
+                                '<h4 class="testimonial__position">%s</h4>',
+                                $config->$position
+                            );
+                        }
+
+                    $html .= '</div>';
 
                 $html .= '</div>';
             
