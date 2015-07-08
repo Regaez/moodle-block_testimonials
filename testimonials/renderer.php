@@ -20,7 +20,7 @@ class block_testimonials_renderer extends plugin_renderer_base {
         $html = '';
 
         $html = sprintf(
-            '<div class="testimonial__list %s">',
+            '<ul class="testimonial__list %s">',
             (int) $config->enable_rotation === 1 ? 'autoplay' : ''
         );
 
@@ -96,7 +96,7 @@ class block_testimonials_renderer extends plugin_renderer_base {
         // output pagination
         if((bool)$config->show_pagination) {
 
-            $html .= '<div class="pagination">';
+            $html .= '<ul class="pagination">';
 
             for($i = 1; $i <= (int)$config->testimonials_shown; $i++) {
                 $html .= sprintf(
