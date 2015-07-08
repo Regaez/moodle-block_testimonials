@@ -79,8 +79,11 @@ $(document).ready(function(){
 		// We only allow changing if the last change has finished
 		if(!disableChanging) {
 			// Reset interval in case it was about to change
-			clearInterval(intervalTimer);
-			intervalTimer = setInterval(autoPlay, 10000);
+			// But only if autoplay is enabled
+			if( $('.block_testimonials .testimonial__list').hasClass('autoplay')) {
+				clearInterval(intervalTimer);
+				intervalTimer = setInterval(autoPlay, 10000);
+			}
 
 			// We pass the link's id attribute to the change function
 			changeTo($(this).attr('data-id'));
