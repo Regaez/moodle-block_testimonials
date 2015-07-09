@@ -474,15 +474,30 @@ class block_testimonials_edit_form extends block_edit_form {
             file_prepare_draft_area($draftPhotoId4, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_4, array('subdirs'=>true));
             file_prepare_draft_area($draftPhotoId5, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_5, array('subdirs'=>true));
         }
-        
+
         parent::set_data($defaults);
 
         if ($data = parent::get_data()) {
-            file_save_draft_area_files($data->config_testimonial_photo_1, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_1, array('subdirs' => true));
-            file_save_draft_area_files($data->config_testimonial_photo_2, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_2, array('subdirs' => true));
-            file_save_draft_area_files($data->config_testimonial_photo_3, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_3, array('subdirs' => true));
-            file_save_draft_area_files($data->config_testimonial_photo_4, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_4, array('subdirs' => true));
-            file_save_draft_area_files($data->config_testimonial_photo_5, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_5, array('subdirs' => true));
+
+            if(isset($data->config_testimonial_photo_1) && isset($this->block->config->testimonial_photo_1)) {
+                file_save_draft_area_files($data->config_testimonial_photo_1, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_1, array('subdirs' => true));
+            }
+
+            if(isset($data->config_testimonial_photo_2) && isset($this->block->config->testimonial_photo_2)) {
+                file_save_draft_area_files($data->config_testimonial_photo_2, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_2, array('subdirs' => true));
+            }
+
+            if(isset($data->config_testimonial_photo_3) && isset($this->block->config->testimonial_photo_3)) {
+                file_save_draft_area_files($data->config_testimonial_photo_3, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_3, array('subdirs' => true));
+            }
+
+            if(isset($data->config_testimonial_photo_4) && isset($this->block->config->testimonial_photo_4)) {
+                file_save_draft_area_files($data->config_testimonial_photo_4, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_4, array('subdirs' => true));
+            }
+
+            if(isset($data->config_testimonial_photo_5) && isset($this->block->config->testimonial_photo_5)) {
+                file_save_draft_area_files($data->config_testimonial_photo_5, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_5, array('subdirs' => true));
+            }   
         }
     }
 }
