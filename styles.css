@@ -1,3 +1,10 @@
+/*
+ * testimonials stylesheet
+ *
+ * @package    block_testimonials
+ * @copyright  2015 Thomas Threadgold <tj.threadgold@gmail.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 .block_testimonials .testimonial__item {
 	list-style: none;
 	padding: 1em 0;

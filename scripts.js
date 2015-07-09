@@ -1,3 +1,10 @@
+/**
+ * testimonials scripts js
+ *
+ * @package    block_testimonials
+ * @copyright  2015 Thomas Threadgold <tj.threadgold@gmail.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 $(document).ready(function(){ 
 
 	// variable to hold our interval id

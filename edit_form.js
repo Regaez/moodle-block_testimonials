@@ -1,7 +1,7 @@
 /**
  * Javascript to manipulate the edit_form elements
  *
- * @copyright 2015 Thomas Threadgold, LearningWorks Ltd
+ * @copyright 2015 Thomas Threadgold <tj.threadgold@gmail.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

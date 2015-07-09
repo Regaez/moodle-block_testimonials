@@ -2,7 +2,7 @@
 /**
  * Form for editing testimonial instances.
  *
- * @copyright 2015 Thomas Threadgold, LearningWorks Ltd
+ * @copyright 2015 Thomas Threadgold <tj.threadgold@gmail.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class block_testimonials_edit_form extends block_edit_form {
