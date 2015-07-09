@@ -13,6 +13,17 @@ class block_testimonials_edit_form extends block_edit_form {
         // Fields for editing HTML block title and contents.
         $mform->addElement('header', 'configheader', get_string('blocksettings', 'block'));
 
+        // Configure the title of the block
+        $mform->addElement(
+            'text',
+            'config_title',
+            get_string(
+                'configtitle',
+                'block_testimonials'
+            )
+        );
+        $mform->setType('config_title', PARAM_TEXT);
+
         // Add show image checkbox
         $mform->addElement(
             'advcheckbox',
@@ -445,22 +456,10 @@ class block_testimonials_edit_form extends block_edit_form {
 
         // INCLUDE JS TO SHOW/HIDE FORM ELEMENTS BASED ON SELECTIONS
         $PAGE->requires->jquery();
-        // $PAGE->requires->js(new moodle_url('blocks/testimonials/edit_form.js'));
+        $PAGE->requires->js(new moodle_url('/blocks/testimonials/edit_form.js'));
     }
 
     function set_data($defaults) {
-        // if (!empty($this->block->config) && is_object($this->block->config)) {
-        //     $defaults->config_courses_shown     = (int) $this->block->config->courses_shown;
-        //     $defaults->config_show_price        = !!$this->block->config->show_price;
-        //     $defaults->config_show_image        = !!$this->block->config->show_image;
-        //     $defaults->config_show_description  = !!$this->block->config->show_description;
-        //     $defaults->config_course_selection  = (int) $this->block->config->course_selection;
-        //     $defaults->config_manual_course_1   = (int) $this->block->config->manual_course_1;
-        //     $defaults->config_manual_course_2   = (int) $this->block->config->manual_course_2;
-        //     $defaults->config_manual_course_3   = (int) $this->block->config->manual_course_3;
-        //     $defaults->config_manual_course_4   = (int) $this->block->config->manual_course_4;
-        // }
-        
         $draftPhotoId1 = file_get_submitted_draft_itemid('config_testimonial_photo_1');
         $draftPhotoId2 = file_get_submitted_draft_itemid('config_testimonial_photo_2');
         $draftPhotoId3 = file_get_submitted_draft_itemid('config_testimonial_photo_3');

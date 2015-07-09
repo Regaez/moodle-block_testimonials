@@ -5,76 +5,55 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$('#id_config_courses_shown').on('change', function(){
-	if(parseInt($(this).val(), 10) < 4) {
-		$('#fitem_id_config_manual_course_4').hide();
-	} else {
-		$('#fitem_id_config_manual_course_4').show();
-	}
+$(document).ready(function(){ 
+	$('#id_config_testimonials_shown').on('change', function(){
+		var numToShow = $('#id_config_testimonials_shown').val();
 
-	if(parseInt($(this).val(), 10) < 3) {
-		$('#fitem_id_config_manual_course_3').hide();
-	} else {
-		$('#fitem_id_config_manual_course_3').show();
-	}
+		if( numToShow < 2) {
+			$('#id_testimonial_header_2').hide();
+		} else {
+			$('#id_testimonial_header_2').show().removeClass('collapsed');
+		}
 
-	if(parseInt($(this).val(), 10) < 2) {
-		$('#fitem_id_config_manual_course_2').hide();
-	} else {
-		$('#fitem_id_config_manual_course_2').show();
-	}
+		if( numToShow < 3) {
+			$('#id_testimonial_header_3').hide();
+		} else {
+			$('#id_testimonial_header_3').show().removeClass('collapsed');
+		}
+
+		if( numToShow < 4) {
+			$('#id_testimonial_header_4').hide();
+		} else {
+			$('#id_testimonial_header_4').show().removeClass('collapsed');
+		}
+
+		if( numToShow < 5) {
+			$('#id_testimonial_header_5').hide();
+		} else {
+			$('#id_testimonial_header_5').show().removeClass('collapsed');
+		}
+	});
+
+	var initSettings = function() {
+		var numToShow = parseInt($('#id_config_testimonials_shown').val(), 10);
+
+		if( numToShow < 2) {
+			$('#id_testimonial_header_2').hide();
+		}
+
+		if( numToShow < 3) {
+			$('#id_testimonial_header_3').hide();
+		}
+
+		if( numToShow < 4) {
+			$('#id_testimonial_header_4').hide();
+		}
+
+		if( numToShow < 5) {
+			$('#id_testimonial_header_5').hide();
+		}
+
+	};
+
+	initSettings(); 
 });
-
-$('#id_config_course_selection').on('change', function(){
-	if(parseInt($(this).val(), 10) === 2) {
-		if(parseInt($('#id_config_courses_shown').val(), 10) < 4) {
-			$('#fitem_id_config_manual_course_4').hide();
-		} else {
-			$('#fitem_id_config_manual_course_4').show();
-		}
-
-		if(parseInt($('#id_config_courses_shown').val(), 10) < 3) {
-			$('#fitem_id_config_manual_course_3').hide();
-		} else {
-			$('#fitem_id_config_manual_course_3').show();
-		}
-
-		if(parseInt($('#id_config_courses_shown').val(), 10) < 2) {
-			$('#fitem_id_config_manual_course_2').hide();
-		} else {
-			$('#fitem_id_config_manual_course_2').show();
-		}
-			
-		$('#fitem_id_config_manual_course_1').show();
-	} else {
-		$('#fitem_id_config_manual_course_4').hide();
-		$('#fitem_id_config_manual_course_3').hide();
-		$('#fitem_id_config_manual_course_2').hide();
-		$('#fitem_id_config_manual_course_1').hide();
-	}
-});
-
-var initSettings = function() {
-	if(parseInt($('#id_config_course_selection').val(), 10) !== 2) {
-		$('#fitem_id_config_manual_course_4').hide();
-		$('#fitem_id_config_manual_course_3').hide();
-		$('#fitem_id_config_manual_course_2').hide();
-		$('#fitem_id_config_manual_course_1').hide();
-	} else {
-		if(parseInt($('#id_config_courses_shown').val(), 10) < 4) {
-			$('#fitem_id_config_manual_course_4').hide();
-		}
-
-		if(parseInt($('#id_config_courses_shown').val(), 10) < 3) {
-			$('#fitem_id_config_manual_course_3').hide();
-		}
-
-		if(parseInt($('#id_config_courses_shown').val(), 10) < 2) {
-			$('#fitem_id_config_manual_course_2').hide();
-		}
-	}
-
-
-};
-
-$(document).ready(function(){ initSettings(); });
