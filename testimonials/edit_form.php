@@ -460,18 +460,21 @@ class block_testimonials_edit_form extends block_edit_form {
     }
 
     function set_data($defaults) {
-        $draftPhotoId1 = file_get_submitted_draft_itemid('config_testimonial_photo_1');
-        $draftPhotoId2 = file_get_submitted_draft_itemid('config_testimonial_photo_2');
-        $draftPhotoId3 = file_get_submitted_draft_itemid('config_testimonial_photo_3');
-        $draftPhotoId4 = file_get_submitted_draft_itemid('config_testimonial_photo_4');
-        $draftPhotoId5 = file_get_submitted_draft_itemid('config_testimonial_photo_5');
 
-        file_prepare_draft_area($draftPhotoId1, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_1, array('subdirs'=>true));
-        file_prepare_draft_area($draftPhotoId2, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_2, array('subdirs'=>true));
-        file_prepare_draft_area($draftPhotoId3, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_3, array('subdirs'=>true));
-        file_prepare_draft_area($draftPhotoId4, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_4, array('subdirs'=>true));
-        file_prepare_draft_area($draftPhotoId5, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_5, array('subdirs'=>true));
+        if (!empty($this->block->config) && is_object($this->block->config)) {
+            $draftPhotoId1 = file_get_submitted_draft_itemid('config_testimonial_photo_1');
+            $draftPhotoId2 = file_get_submitted_draft_itemid('config_testimonial_photo_2');
+            $draftPhotoId3 = file_get_submitted_draft_itemid('config_testimonial_photo_3');
+            $draftPhotoId4 = file_get_submitted_draft_itemid('config_testimonial_photo_4');
+            $draftPhotoId5 = file_get_submitted_draft_itemid('config_testimonial_photo_5');
 
+            file_prepare_draft_area($draftPhotoId1, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_1, array('subdirs'=>true));
+            file_prepare_draft_area($draftPhotoId2, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_2, array('subdirs'=>true));
+            file_prepare_draft_area($draftPhotoId3, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_3, array('subdirs'=>true));
+            file_prepare_draft_area($draftPhotoId4, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_4, array('subdirs'=>true));
+            file_prepare_draft_area($draftPhotoId5, $this->block->context->id, 'block_testimonials', 'photo', (int)$this->block->config->testimonial_photo_5, array('subdirs'=>true));
+        }
+        
         parent::set_data($defaults);
 
         if ($data = parent::get_data()) {
