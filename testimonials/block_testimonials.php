@@ -32,9 +32,13 @@ class block_testimonials extends block_base {
         $this->content->text = '';
         $this->content->footer = '';
 
-        // Render HTML
+        // Get the renderer
         $renderer = $this->page->get_renderer('block_testimonials');
-        $this->content->text = $renderer->output_testimonials($this->config, $this->context);        
+
+        // If block has been configured, then output the testimonials
+        if (!empty($this->config) && is_object($this->config)) {
+            $this->content->text = $renderer->output_testimonials($this->config, $this->context);        
+        }
 
         $PAGE->requires->jquery();
         $PAGE->requires->js(new moodle_url('/blocks/testimonials/scripts.js'));
