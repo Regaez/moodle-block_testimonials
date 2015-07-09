@@ -13,13 +13,11 @@ class block_testimonials extends block_base {
      * Block initialization
      */
     public function init() {
-        $configTitle = get_config('block_testimonials', 'config_title');
+        $this->title   = get_string('block_title', 'block_testimonials');
+    }
 
-        if (0 < strlen($configTitle)) {
-            $this->title   = $configTitle;
-        } else {
-            $this->title   = get_string('block_title', 'block_testimonials');
-        }
+    function specialization() {
+        $this->title = isset($this->config->title) && 0 < strlen($this->config->title) ? format_string($this->config->title) : format_string(get_string('block_title', 'block_testimonials'));
     }
 
     /**
@@ -67,7 +65,7 @@ class block_testimonials extends block_base {
      * @return array
      */
     public function applicable_formats() {
-        return array('site-index' => true);
+        return array('all' => true);
     }
 
     /**
