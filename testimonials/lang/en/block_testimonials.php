@@ -12,6 +12,7 @@ $string['testimonials:addinstance'] = 'Add a new Testimonials block';
 $string['testimonials:myaddinstance'] = 'Add a new Testimonials block to My home';
 $string['block_title'] = 'Testimonials';
 
+$string['config_title'] = 'Custom block title';
 $string['testimonials_shown'] = 'Number of testimonials';
 $string['testimonials_shown_desc'] = 'The number of courses which should be displayed in the block.';
 $string['show_name'] = 'Show name';

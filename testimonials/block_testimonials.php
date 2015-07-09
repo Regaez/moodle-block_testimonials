@@ -13,7 +13,13 @@ class block_testimonials extends block_base {
      * Block initialization
      */
     public function init() {
-        $this->title   = get_string('block_title', 'block_testimonials');
+        $configTitle = get_config('block_testimonials', 'config_title');
+
+        if (0 < strlen($configTitle)) {
+            $this->title   = $configTitle;
+        } else {
+            $this->title   = get_string('block_title', 'block_testimonials');
+        }
     }
 
     /**
