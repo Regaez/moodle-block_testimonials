@@ -12,25 +12,25 @@ $(document).ready(function(){
 		if( numToShow < 2) {
 			$('#id_testimonial_header_2').hide();
 		} else {
-			$('#id_testimonial_header_2').show().removeClass('collapsed');
+			$('#id_testimonial_header_2').show();
 		}
 
 		if( numToShow < 3) {
 			$('#id_testimonial_header_3').hide();
 		} else {
-			$('#id_testimonial_header_3').show().removeClass('collapsed');
+			$('#id_testimonial_header_3').show();
 		}
 
 		if( numToShow < 4) {
 			$('#id_testimonial_header_4').hide();
 		} else {
-			$('#id_testimonial_header_4').show().removeClass('collapsed');
+			$('#id_testimonial_header_4').show();
 		}
 
 		if( numToShow < 5) {
 			$('#id_testimonial_header_5').hide();
 		} else {
-			$('#id_testimonial_header_5').show().removeClass('collapsed');
+			$('#id_testimonial_header_5').show();
 		}
 	});
 
