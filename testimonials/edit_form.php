@@ -18,7 +18,7 @@ class block_testimonials_edit_form extends block_edit_form {
             'text',
             'config_title',
             get_string(
-                'configtitle',
+                'config_title',
                 'block_testimonials'
             )
         );
